@@ -12,7 +12,7 @@ import {firebaseMiddleware} from './lib/redux-firebase';
 
 export default function configureStore({deps, initialState}) {
 
-  const firebase = new Firebase('https://este.firebaseio.com');
+  const firebase = new Firebase('https://vetoapp.firebaseio.com');
   // // Check whether connection works.
   // firebase.child('hello-world').set({
   //   createdAt: Firebase.ServerValue.TIMESTAMP
@@ -28,7 +28,7 @@ export default function configureStore({deps, initialState}) {
 
   // Remember to set SERVER_URL for deploy.
   const serverUrl = process.env.SERVER_URL ||
-    // Browser is ok with relative url. Server and React Native need absolute.
+      // Browser is ok with relative url. Server and React Native need absolute.
     (process.env.IS_BROWSER ? '' : 'http://localhost:8000');
 
   const middleware = [
@@ -36,6 +36,7 @@ export default function configureStore({deps, initialState}) {
       ...deps,
       fetch: createFetch(serverUrl),
       firebase,
+      TIMESTAMP: Firebase.ServerValue.TIMESTAMP,
       getUid: () => shortid.generate(),
       now: () => Date.now(),
       validate: validate(() => store.getState()) // eslint-disable-line no-use-before-define
@@ -48,7 +49,7 @@ export default function configureStore({deps, initialState}) {
 
   // Enable logger only for browser and React Native development.
   const enableLogger = process.env.NODE_ENV !== 'production' &&
-    (process.env.IS_BROWSER || process.env.IS_REACT_NATIVE);
+    (process.env.IS_BROWSER || pfrocess.env.IS_REACT_NATIVE);
 
   if (enableLogger) {
     const logger = createLogger({

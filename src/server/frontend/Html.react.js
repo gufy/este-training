@@ -13,7 +13,7 @@ export default class Html extends Component {
   render() {
     const {
       appCssFilename, bodyHtml, googleAnalyticsId, isProduction, helmet
-    } = this.props;
+      } = this.props;
 
     const linkStyles = appCssFilename &&
       <link
@@ -33,19 +33,19 @@ ga('create', '${googleAnalyticsId}', 'auto'); ga('send', 'pageview');`}}
 
     return (
       <html lang="en">
-        <head>
-          <meta charSet="utf-8" />
-          <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
-          <meta content="ie=edge" httpEquiv="x-ua-compatible" />
-          {helmet.title.toComponent()}
-          {helmet.base.toComponent()}
-          {helmet.meta.toComponent()}
-          {helmet.link.toComponent()}
-          {helmet.script.toComponent()}
-          {linkStyles}
-          {analytics}
-        </head>
-        <body dangerouslySetInnerHTML={{__html: bodyHtml}} />
+      <head>
+        <meta charSet="utf-8"/>
+        <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+        <meta content="ie=edge" httpEquiv="x-ua-compatible"/>
+        {helmet.title.toComponent()}
+        {helmet.base.toComponent()}
+        {helmet.meta.toComponent()}
+        {helmet.link.toComponent()}
+        {helmet.script.toComponent()}
+        {linkStyles}
+        {analytics}
+      </head>
+      <body dangerouslySetInnerHTML={{__html: bodyHtml}}/>
       </html>
     );
   }

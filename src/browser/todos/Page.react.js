@@ -19,7 +19,7 @@ class Page extends Component {
 
     return (
       <div className="todos-page">
-        <Helmet title={msg.title} />
+        <Helmet title={msg.title}/>
         <NewTodo />
         <Todos />
         <Buttons />

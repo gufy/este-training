@@ -24,15 +24,15 @@ export default function createRoutes(getState) {
 
   return (
     <Route component={App} path="/">
-      <IndexRoute component={Home} />
-      <Route component={Auth} path="login" />
-      <Route component={Firebase} path="firebase" />
+      <IndexRoute component={Home}/>
+      <Route component={Auth} path="login"/>
+      <Route component={Firebase} path="firebase"/>
       <Route component={Me} onEnter={requireAuth} path="me">
-        <Route component={Profile} path="profile" />
-        <Route component={Settings} path="settings" />
+        <Route component={Profile} path="profile"/>
+        <Route component={Settings} path="settings"/>
       </Route>
-      <Route component={Todos} path="todos" />
-      <Route component={NotFound} path="*" />
+      <Route component={Todos} path="todos"/>
+      <Route component={NotFound} path="*"/>
     </Route>
   );
 

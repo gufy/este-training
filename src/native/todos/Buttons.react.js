@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 
 const {
   PropTypes, StyleSheet, Text, TouchableOpacity, View
-} = React;
+  } = React;
 
 const styles = StyleSheet.create({
   buttons: {
@@ -52,7 +52,7 @@ class TodoButtons extends Component {
   render() {
     const {
       addHundredTodos, clearAllCompletedTodos, clearAllTodos, msg, todos
-    } = this.props;
+      } = this.props;
     const hasCompletedTodos = todos.count(todo => todo.completed) > 0;
 
     return (

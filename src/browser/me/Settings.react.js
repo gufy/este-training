@@ -14,7 +14,7 @@ class Settings extends Component {
 
     return (
       <div className="settings-page">
-        <Helmet title={msg.title} />
+        <Helmet title={msg.title}/>
         <p>
           {msg.title}
         </p>

@@ -20,19 +20,19 @@ class Page extends Component {
 
     return (
       <div className="me-page">
-        <Helmet title={msg.me.title} />
+        <Helmet title={msg.me.title}/>
         <ul>
           <li><Link activeClassName="active" to="/me/profile">{msg.profile.title}</Link></li>
           <li><Link activeClassName="active" to="/me/settings">{msg.settings.title}</Link></li>
         </ul>
         {children ||
-          <p>
-            <FormattedMessage
-              defaultMessage={msg.me.welcome}
-              id={'msg.me.welcome'}
-              values={{email}}
-            />
-          </p>
+        <p>
+          <FormattedMessage
+            defaultMessage={msg.me.welcome}
+            id={'msg.me.welcome'}
+            values={{email}}
+          />
+        </p>
         }
         <AuthLogout />
       </div>

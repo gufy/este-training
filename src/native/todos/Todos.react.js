@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 
 const {
   Image, PropTypes, ScrollView, StyleSheet, Text, View
-} = React;
+  } = React;
 
 const styles = StyleSheet.create({
   centeredView: {
@@ -62,7 +62,7 @@ class Todos extends Component {
       <ScrollView>
         {list.map(todo =>
           <View key={todo.id} style={styles.row}>
-            <Todo todo={todo} toggleTodoCompleted={toggleTodoCompleted} />
+            <Todo todo={todo} toggleTodoCompleted={toggleTodoCompleted}/>
           </View>
         )}
         <Buttons />

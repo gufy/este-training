@@ -3,7 +3,7 @@ import React from 'react-native';
 
 const {
   Image, PropTypes, StyleSheet, Text, TouchableOpacity, View
-} = React;
+  } = React;
 
 const styles = StyleSheet.create({
   container: {

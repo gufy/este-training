@@ -15,7 +15,7 @@ class NotFound extends Component {
 
     return (
       <div className="notfound-page">
-        <Helmet title={msg.title} />
+        <Helmet title={msg.title}/>
         <h1>{msg.header}</h1>
         <p>{msg.message}</p>
         <Link to="/">{msg.continueMessage}</Link>

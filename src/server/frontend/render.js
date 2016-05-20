@@ -62,7 +62,7 @@ const renderPage = (store, renderProps, req) => {
   const {
     styles: {app: appCssFilename},
     javascript: {app: appJsFilename}
-  } = webpackIsomorphicTools.assets();
+    } = webpackIsomorphicTools.assets();
   const scriptHtml = getScriptHtml(state, headers, hostname, appJsFilename);
   if (!config.isProduction) {
     webpackIsomorphicTools.refresh();

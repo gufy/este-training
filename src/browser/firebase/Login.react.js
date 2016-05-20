@@ -1,12 +1,11 @@
 import './Page.scss';
 import Component from 'react-pure-render/component';
-import Helmet from 'react-helmet';
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {login} from '../../common/lib/redux-firebase/actions';
 import {logout} from '../../common/auth/actions';
 
-class Page extends Component {
+class Login extends Component {
 
   static propTypes = {
     auth: PropTypes.object.isRequired,
@@ -19,13 +18,7 @@ class Page extends Component {
     const {auth, login, logout, viewer} = this.props;
 
     return (
-      <div className="firebase-page">
-        <Helmet title="Firebase"/>
-        <h2>
-          <a href="https://www.firebase.com/" target="_blank">
-            <img height="27" src={require('./FirebaseLogo.png')} width="140"/>
-          </a>
-        </h2>
+      <div className="firebase-login">
         {viewer ?
           <div className="user-logged-in">
             <h2>Hi {viewer.displayName || viewer.email}</h2>
@@ -34,12 +27,16 @@ class Page extends Component {
               <img src={viewer.profileImageURL}/>
             </div>
             }
-            <button onClick={logout}>Logout</button>
+            <button
+              className="btn btn-secondary-outline"
+              onClick={logout}
+            >Logout
+            </button>
           </div>
           :
           <div className="user-logged-out">
-            <p>Firebase integration to Este and Redux.</p>
             <button
+              className="btn btn-lg btn-primary"
               disabled={auth.formDisabled}
               onClick={login}
             >Facebook Login
@@ -55,7 +52,8 @@ class Page extends Component {
 
 }
 
+// TODO: Nice! High order componenty (pattern dekorator) namisto mixinu
 export default connect(state => ({
   auth: state.auth,
   viewer: state.users.viewer
-}), {login, logout})(Page);
+}), {login, logout})(Login);

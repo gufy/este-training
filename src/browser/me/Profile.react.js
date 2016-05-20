@@ -14,7 +14,7 @@ class Profile extends Component {
 
     return (
       <div className="profile-page">
-        <Helmet title={msg.title} />
+        <Helmet title={msg.title}/>
         <p>
           {msg.title}
         </p>

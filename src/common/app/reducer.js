@@ -7,6 +7,7 @@ import intl from '../intl/reducer';
 import todos from '../todos/reducer';
 import ui from '../ui/reducer';
 import users from '../users/reducer';
+import vetos from '../vetos/reducer';
 
 const appReducer = combineReducers({
   auth,
@@ -15,7 +16,8 @@ const appReducer = combineReducers({
   reduxFields,
   todos,
   ui,
-  users
+  users,
+  vetos
 });
 
 export default appReducer;

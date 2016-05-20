@@ -16,8 +16,8 @@ class Page extends Component {
 
     return (
       <div className="login-page">
-        <Helmet title={msg.title} />
-        <Login location={location} />
+        <Helmet title={msg.title}/>
+        <Login location={location}/>
       </div>
     );
   }

@@ -48,8 +48,10 @@ class App extends Component {
   getTitle(route) {
     const {links} = this.props;
     switch (route) {
-      case routes.home: return links.home;
-      case routes.todos: return links.todos;
+      case routes.home:
+        return links.home;
+      case routes.todos:
+        return links.todos;
     }
   }
 
@@ -66,7 +68,7 @@ class App extends Component {
       </View>;
 
     const menu =
-      <Menu links={links} onRouteChange={this.onRouteChange} />;
+      <Menu links={links} onRouteChange={this.onRouteChange}/>;
 
     return (
       <SideMenu

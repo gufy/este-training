@@ -12,21 +12,14 @@ class Header extends Component {
   };
 
   render() {
-    const {msg, viewer} = this.props;
-
     return (
       <header>
         <h1>
-          <Link to="/">{msg.home}</Link>
+          <Link to="/">Vetoapp</Link>
         </h1>
-        <ul>
-          <li><Link activeClassName="active" to="/firebase">{msg.firebase}</Link></li>
-          <li><Link activeClassName="active" to="/todos">{msg.todos}</Link></li>
-          <li><Link activeClassName="active" to="/me">{msg.me}</Link></li>
-          {!viewer &&
-            <li><Link activeClassName="active" to="/login">{msg.login}</Link></li>
-          }
-        </ul>
+        <nav>
+          <Link to="/me">Me</Link>
+        </nav>
       </header>
     );
   }

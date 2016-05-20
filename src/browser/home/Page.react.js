@@ -1,52 +1,31 @@
+import * as vetosActions from '../../common/vetos/actions';
 import Component from 'react-pure-render/component';
 import Helmet from 'react-helmet';
 import React, {PropTypes} from 'react';
-import {FormattedHTMLMessage} from 'react-intl';
-import {Link} from 'react-router';
 import {connect} from 'react-redux';
+import FirebaseLogin from '../firebase/Login.react';
+import AddVeto from '../vetos/AddVeto.react';
+import VetosList from '../vetos/List.react';
+import focusInvalidField from '../lib/focusInvalidField';
 
 class Page extends Component {
 
-  static propTypes = {
-    msg: PropTypes.object.isRequired
-  };
-
   render() {
-    const {msg} = this.props;
-
     return (
       <div className="home-page">
-        <Helmet title={msg.title} />
+        <Helmet title="Vetoapp" />
         <p>
-          <FormattedHTMLMessage defaultMessage={msg.infoHtml} />
+          Rušíme zákony! Přihlaš se.
         </p>
-        <div className="tocheck">
-          <h2>{msg.toCheck.h2}</h2>
-          <ul>
-            {msg.toCheck.list.map((text, i) =>
-              <li key={i}>
-                <FormattedHTMLMessage defaultMessage={text} />
-              </li>
-            )}
-            <li>
-              {msg.toCheck.isomorphicPage}{' '}
-              <Link to="/this-is-not-the-web-page-you-are-looking-for">404</Link>
-            </li>
-            <li>
-              {msg.toCheck.andMuchMore}
-            </li>
-          </ul>
-          {/* Note require usage for image source. Very useful for CDN. */}
-          <img alt="50x50 placeholder" src={require('./50x50.png')} />
-        </div>
+        <FirebaseLogin />
+        <hr/>
+        <AddVeto />
+        <hr/>
+        <VetosList />
       </div>
     );
   }
 
 }
-
-Page = connect(state => ({
-  msg: state.intl.msg.home
-}))(Page);
 
 export default Page;

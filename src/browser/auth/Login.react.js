@@ -50,7 +50,7 @@ class Login extends Component {
 
     return (
       <div className="login">
-        <Helmet title="Login" />
+        <Helmet title="Login"/>
         <form onSubmit={this.onFormSubmit}>
           <fieldset disabled={auth.formDisabled}>
             <legend>{msg.legend}</legend>
@@ -71,7 +71,7 @@ class Login extends Component {
             <button type="submit">{msg.button.login}</button>
             <span className="hint">{msg.hint}</span>
             {auth.formError &&
-              <p className="error-message">{auth.formError.message}</p>
+            <p className="error-message">{auth.formError.message}</p>
             }
           </fieldset>
         </form>

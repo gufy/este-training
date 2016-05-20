@@ -29,7 +29,7 @@ class App extends Component {
 
     return (
       // Pass data-pathname to allow route specific styling.
-      <div className="page" data-pathname={location.pathname}>
+      <div className="container" data-pathname={location.pathname}>
         <Helmet
           link={[
             {rel: 'shortcut icon', href: require('./favicon.ico')}

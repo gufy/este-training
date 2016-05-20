@@ -3,7 +3,7 @@ import React from 'react-native';
 
 const {
   Image, PropTypes, StyleSheet, TextInput, TouchableOpacity, View
-} = React;
+  } = React;
 
 const styles = StyleSheet.create({
   container: {
@@ -54,7 +54,7 @@ export default class Todo extends Component {
           activeOpacity={.8}
           onPress={this.onTouchableOpacityPress}
         >
-          <Image source={image} style={styles.checkbox} />
+          <Image source={image} style={styles.checkbox}/>
         </TouchableOpacity>
         <TextInput
           editable={false}

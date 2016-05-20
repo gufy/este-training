@@ -1,8 +1,8 @@
 {
-  "firebase": "este",
+  "firebase": "vetoapp",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rules": "firebase/rules.bolt",
+  //"rules": "firebase/rules.bolt",
   "public": "build",
   "ignore": [
     "**/.*",

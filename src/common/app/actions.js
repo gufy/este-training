@@ -6,7 +6,12 @@ export function onAppComponentDidMount() {
   // Who injected firebase and store? Check configureStore.js injectMiddleware.
   return ({firebase, store}) => {
 
-    // Firebase has two methods to get user auth.
+
+//    firebase.child('vetos').on('value', snapshot => {
+//      console.log(snapshot.val());
+//    });
+
+      // Firebase has two methods to get user auth.
     //  - getAuth is sync, because it uses localStorage.
     //  - onAuth is async, because it monitors current auth from server.
 
@@ -15,6 +20,7 @@ export function onAppComponentDidMount() {
 
     // Async handling of login / logout.
     firebase.onAuth(authData => {
+      // TODO: Dispatch logout as well
       store.dispatch(firebaseAction.onAuth(authData));
     });
 

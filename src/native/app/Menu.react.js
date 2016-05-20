@@ -3,7 +3,7 @@ import React, {Dimensions} from 'react-native';
 
 const {
   PropTypes, ScrollView, StyleSheet, Text, View
-} = React;
+  } = React;
 
 const window = Dimensions.get('window');
 

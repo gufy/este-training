@@ -8,7 +8,7 @@ import {format} from '../../common/intl/format';
 
 const {
   PropTypes, StyleSheet, Text, View
-} = React;
+  } = React;
 
 const styles = StyleSheet.create({
   container: {
